@@ -5,8 +5,6 @@ function tocaSom(idElementoAudio) {
 
 const listaDeTeclas = document.querySelectorAll('.tecla');
 
-let contador = 0;
-
 // Laço de repetição (Para) 
 for (var cont = 0; cont < listaDeTeclas.length; cont++) {
     const tecla = listaDeTeclas[cont];
@@ -15,8 +13,12 @@ for (var cont = 0; cont < listaDeTeclas.length; cont++) {
     tecla.onclick = function () {
         tocaSom(idAudio)
     }
-    tecla.onkeydown = function () {
-        tecla.classList.add('ativa');
+    tecla.onkeydown = function (evento) {
+        console.log(evento.code);
+        if (evento.code === 'Space' || evento.code === 'Enter') {
+            tecla.classList.add('ativa');
+        }
+
     }
     tecla.onkeyup = function () {
         tecla.classList.remove('ativa');

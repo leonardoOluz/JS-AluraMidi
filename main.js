@@ -14,10 +14,12 @@ for (var cont = 0; cont < listaDeTeclas.length; cont++) {
     const idAudio = `#som_${instrumento}`; // template string
     tecla.onclick = function () {
         tocaSom(idAudio)
-
     }
     tecla.onkeydown = function () {
         tecla.classList.add('ativa');
+    }
+    tecla.onkeyup = function () {
+        tecla.classList.remove('ativa');
     }
 
 }

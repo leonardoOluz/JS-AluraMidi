@@ -1,8 +1,14 @@
-function tocaSom(idElementoAudio) {
+// Função para tocar o Play do seletor 
+function tocaSom(seletorAudio) {
+    const elemento = document.querySelector(seletorAudio);
+    if (elemento && elemento.localName === 'audio') { // usando operador logico  ( And ) 
+        elemento.play();
+    } else { // usando a estrutura condicional simples if else
+        console.log('Elemento não encontrado ou seletor inválido');
+    }
 
-    document.querySelector(idElementoAudio).play();
 }
-
+// guardando em uma constante a class .tecla
 const listaDeTeclas = document.querySelectorAll('.tecla');
 
 // Laço de repetição (Para) 
@@ -14,7 +20,6 @@ for (var cont = 0; cont < listaDeTeclas.length; cont++) {
         tocaSom(idAudio)
     }
     tecla.onkeydown = function (evento) {
-        console.log(evento.code);
         if (evento.code === 'Space' || evento.code === 'Enter') { // estrutura condicionais simples com operadores logicos ( igual e Ou ). 
             tecla.classList.add('ativa');
         }

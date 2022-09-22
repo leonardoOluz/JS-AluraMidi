@@ -15,7 +15,7 @@ for (var cont = 0; cont < listaDeTeclas.length; cont++) {
     }
     tecla.onkeydown = function (evento) {
         console.log(evento.code);
-        if (evento.code === 'Space' || evento.code === 'Enter') { // estrutura condicionais simples
+        if (evento.code === 'Space' || evento.code === 'Enter') { // estrutura condicionais simples com operadores logicos ( igual e Ou ). 
             tecla.classList.add('ativa');
         }
 
